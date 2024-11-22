@@ -1,0 +1,113 @@
+/* CSS RESET */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    max-width: 100%;
+    display: block;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+#root,
+#__next {
+    isolation: isolate;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.title {
+    text-align: center;
+}
+
+.todos {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+}
+
+.todo {
+    justify-content: space-between;
+    background-color: #0000001a;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    display: flex;
+    width: 50%;
+}
+
+.todoStatus, .todoDelete {
+    transition: all 0.2s;
+    cursor: pointer;
+    line-height: 1;
+    border: none;
+    padding: 0;
+
+    &:hover {
+        transform: scale(1.15);
+    }
+}
+
+.actions {
+    display: flex;
+    gap: 20px;
+}
+
+.form {
+    margin: 1rem auto;
+    display: flex;
+    gap: 0.5rem;
+    width: 50%;
+}
+
+.formInput {
+    padding: 0.25rem 0.5rem;
+    flex: 1;
+}

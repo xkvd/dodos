@@ -1,11 +1,20 @@
+const { connectMongoDB } = require("./database");
 const express = require("express");
-const router = require("./routes");
 
+require("dotenv").config();
+
+const port = process.env.PORT || 5000;
 const app = express();
-const port = 5000;
 
+const router = require("./routes");
+app.use(express.json());
 app.use("/api", router);
 
-app.listen(port, () => {
-    console.log(`Server listening on port ${port}...`)
-})
+async function serve() {
+    await connectMongoDB();
+    app.listen(port, () => {
+        console.log(`Server listening on port ${port}...`)
+    })
+}
+
+serve();
