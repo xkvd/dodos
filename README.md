@@ -1,29 +1,26 @@
-# Dodos - a MERN TODO app
-Dodos is a MERN app that allows you to create, edit and delete tasks.
+# dodos - A bare bones multi-user TODO app
+Dodos is a multi-user TODO app that allows you manage your todos with CRUD.
 
-It implements simple user authentication for per-user task management with a simple REST API to handle requests.
+It allows you to also manage your tasks per-user, meaning each user has
+different tasks per request.
+
+### Architecture
+For frontend, Vanilla React with HTML+CSS is used for the styling.
+
+No styling frameworks are required nor used.
+
+For the backend, Express.js handles the routing with a basic authentication middleware handling user logic.
+
+Mongoose is used to manage schemas and data with the help of MongoDB.
 
 ### Usage
-First clone this to your local directory by doing:
-```
-$ git clone https://github.com/xkvd/dodos.git --depth 1
-```
+To run the program, simply run the `start.bat` (Windows) or `start.bash` (Linux/MacOS) in the `build` directory.
 
-After that, enter the directory and run `npm install` in `client` and `server`.
+This would automatically install the required dependencies, and start the client
+and server port after which it would automatically open the front-end app.
 
-Finally, create a `.env` file in the `server` folder and make sure to set the following variables:
-- `MONGODB_URI` - Set to connection string of your MongoDB Atlas instance
-- `PORT` - Set to 5000
+To interact with the backend, you can use a API client such as Postman or Insomnia
+to send requests to the API.
 
-After this, create two terminals one in `client` and run:
-```
-client/ $ npm start
-```
-And the other one in `server` and run:
-```
-server/ $ npm run dev
-```
-
-Running this command would automatically open the react app in your browser.
-
-If not, then open `http://localhost:3000` in your browser to preview the app.
+Some filtering and input validation is implemented to ensure validity of data, however
+it isn't anything production-grade as this is my first project.
